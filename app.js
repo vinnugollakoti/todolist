@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const todos = Array.from(todoList.children).map(li => ({
             text: li.querySelector('.todo-text').textContent,
             id: li.dataset.id,
-            dueDateTime: li.querySelector('.due-date').textContent
+            dueDateTime: li.querySelector('.due-date').textContent.replace('Due: ', '')
         }));
         localStorage.setItem('todos', JSON.stringify(todos));
     }
